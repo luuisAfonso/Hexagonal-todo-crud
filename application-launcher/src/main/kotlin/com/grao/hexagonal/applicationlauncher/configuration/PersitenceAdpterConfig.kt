@@ -1,17 +1,16 @@
-package com.grao.hexagonal.factory
+package com.grao.hexagonal.applicationlauncher.configuration
 
 import com.grao.hexagonal.adapters.TodoPersistenceAdapter
 import com.grao.hexagonal.mapper.TodoMapper
 import com.grao.hexagonal.ports.api.TodoServicePort
 import com.grao.hexagonal.repository.TodoRepositoryImpl
 import com.grao.hexagonal.service.TodoServiceImpl
-import io.micronaut.context.annotation.Factory
-import jakarta.inject.Singleton
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 
-@Factory
-class AdapterFactory {
-
-    @Singleton
+@Configuration
+class PersitenceAdpterConfig {
+    @Bean
     fun todoServicePort(): TodoServicePort {
         return TodoServiceImpl(TodoPersistenceAdapter(TodoRepositoryImpl(), TodoMapper()))
     }
