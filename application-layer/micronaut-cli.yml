@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.grao.hexagonal
+testFramework: junit
+sourceLanguage: kotlin
+buildTool: maven
+features: [ annotation-api, app-name, http-client, jackson-databind, jetty-server, junit, kotlin, kotlin-application, logback, maven, readme, shade, yaml ]
